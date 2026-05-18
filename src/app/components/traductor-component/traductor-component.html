@@ -1,0 +1,27 @@
+<div class="container">
+    <select class="form-select m-2" [(ngModel)]="from">
+        <option [value]="leng.code" *ngFor="let leng of lenguajes" >{{leng.language}}</option>
+    </select>
+
+    <select class="form-select m-2" [(ngModel)]="to">
+        <option [value]="leng.code"*ngFor="let leng of lenguajes">{{leng.language}}</option>
+    </select>
+
+    <!-- <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">De:</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="es" [(ngModel)]="from">
+    </div>
+    <div class="mb-3">
+         <label for="exampleFormControlInput1" class="form-label">A:</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="en" [(ngModel)]="to" >
+    </div> -->
+
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Texto a Traducir</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  [(ngModel)]="text"></textarea>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="enviarLenguaje()">Traducir</button>
+
+    <label class="form-label m-3">Texto a Traducido: {{result | json}}</label>
+</div>
