@@ -1,0 +1,35 @@
+fancy-card {
+      cursor: pointer;
+      border: 0;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #fff;
+      transition: transform .35s ease, box-shadow .35s ease, filter .35s ease;
+      position: relative;
+      isolation: isolate;
+    }
+    .fancy-card::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #6366f1, #ec4899);
+      opacity: 0; transition: opacity .35s ease;
+      z-index: -1;
+    }
+    .fancy-card img { transition: transform .5s ease; }
+
+    /* Cuando hago hover en UNA card */
+    .fancy-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 40px -10px rgba(99,102,241,.45);
+    }
+    .fancy-card:hover::before { opacity: 1; }
+    .fancy-card:hover .card-body { color: #fff; }
+    .fancy-card:hover .card-body .text-muted { color: rgba(255,255,255,.85) !important; }
+    .fancy-card:hover img { transform: scale(1.0); }
+
+    /* Cuando hago hover en la GRILLA, las otras se atenúan */
+    .cards-grid:hover .fancy-card:not(:hover) {
+      filter: blur(2px) grayscale(40%);
+      opacity: .55;
+      transform: scale(.90);
+    }
