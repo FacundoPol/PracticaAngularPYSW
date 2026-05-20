@@ -1,6 +1,37 @@
 <div class="container m-3">
     <select class="form-select">
-        <option value="" *ngFor="let marca of listaMarcas">{{marca.name}}</option>
+        <option [(ngModel)]="marca.id" *ngFor="let marca of listaMarcas">{{marca.name}}</option>
     </select>
-    <button type="button" class="btn btn-primary mt-3">Solicitar</button>
+    <button type="button" data-bs-toggle="modal" data-bs-target="#modelos" class="btn btn-primary mt-3" (click)="obtenerModelos()">Solicitar</button>
+</div>
+
+<div class="modal fade" id="modelos" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Modelos Autos</h5>
+
+        <button 
+          type="button" 
+          class="btn-close" 
+          data-bs-dismiss="modal">
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <p *ngFor="let modelo of listaModelos">modelo.name</p>
+      </div>
+
+      <div class="modal-footer">
+        <button 
+          type="button" 
+          class="btn btn-secondary"
+          data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
 </div>

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { MarcaService } from '../../services/marca-service';
-import { FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-marca-component',
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './marca-component.html',
   styleUrl: './marca-component.css',
 })
@@ -25,6 +25,21 @@ export class MarcaComponent {
         console.log(error)
       }
       )
+  }
+
+  marcaId:string=""
+  listaModelos: Array<any> = []
+
+
+  obtenerModelos(){
+    this.marcaService.getModelos(this.marcaId).subscribe(
+      (result:any)=>{
+        this.listaModelos= result
+      },
+      (error:any)=>{
+        console.log(error)
+      }
+    )
   }
 
 }
