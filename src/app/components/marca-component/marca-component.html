@@ -1,6 +1,6 @@
 <div class="container m-3">
     <select class="form-select">
-        <option [(ngModel)]="marca.id" *ngFor="let marca of listaMarcas">{{marca.name}}</option>
+        <option [ngValue]="marca.id" *ngFor="let marca of listaMarcas">{{marca.name}}</option>
     </select>
     <button type="button" data-bs-toggle="modal" data-bs-target="#modelos" class="btn btn-primary mt-3" (click)="obtenerModelos()">Solicitar</button>
 </div>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="modal-body">
-        <p *ngFor="let modelo of listaModelos">modelo.name</p>
+        <p *ngFor="let modelo of listaModelos">{{modelo.name}}</p>
       </div>
 
       <div class="modal-footer">

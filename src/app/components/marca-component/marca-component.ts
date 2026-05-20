@@ -34,7 +34,8 @@ export class MarcaComponent {
   obtenerModelos(){
     this.marcaService.getModelos(this.marcaId).subscribe(
       (result:any)=>{
-        this.listaModelos= result
+        // this.listaModelos= result
+        console.log(result)
       },
       (error:any)=>{
         console.log(error)

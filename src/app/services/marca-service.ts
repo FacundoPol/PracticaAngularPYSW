@@ -31,6 +31,6 @@ export class MarcaService {
         'Content-Type' : 'application/json'
       })
     }
-    return this.http.get(`https://car-specs.p.rapidapi.com/v2/cars/makes/${marcaId}/models`,httpOptions)
+    return this.http.get("https://car-specs.p.rapidapi.com/v2/cars/makes/"+marcaId+"/models",httpOptions)
   }
 }
