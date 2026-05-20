@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './traductor-component.css',
 })
 export class TraductorComponent {
-
   from: string = "";
   to: string = "";
   text: string = "";
@@ -18,6 +17,8 @@ export class TraductorComponent {
 
   lenguajes: Array<any> = []
 
+  
+  
   constructor(private traductorService: Traductor){
     this.obtenerLenguajes();
   }
@@ -34,9 +35,11 @@ export class TraductorComponent {
   }
 
   enviarLenguaje(){
+    console.log("entro en enviar lenguaje ...")
     this.traductorService.enviarLenguaje(this.from,this.to,this.text).subscribe(
       (result: any) =>{
         this.result = result.trans;
+        console.log(result);
       },
       (error: any) =>{
         console.log(error);
