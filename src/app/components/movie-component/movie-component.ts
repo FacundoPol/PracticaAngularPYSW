@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { MovieService } from '../../services/movie-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MovieService } from '../../services/movie-service';
 
 @Component({
   selector: 'app-movie-component',
