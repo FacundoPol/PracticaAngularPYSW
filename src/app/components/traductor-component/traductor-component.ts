@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Traductor } from '../../servicios/traductor';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
 @Component({
   selector: 'app-traductor-component',
   imports: [FormsModule,CommonModule],
@@ -10,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './traductor-component.css',
 })
 export class TraductorComponent {
-  from: string = "";
+  from: string = ""
   to: string = "";
   text: string = "";
   result: string = "";
