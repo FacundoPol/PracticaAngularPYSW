@@ -1,0 +1,48 @@
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <div class="card shadow p-4">
+
+      <h3 class="mb-4">Formulario</h3>
+
+      <form>
+
+        <!-- Primer desplegable -->
+        <div class="mb-3">
+          <label class="form-label">De:</label>
+          <select class="form-select" [(ngModel)]="from" name="from">
+            <option [ngValue]="moneda.codigo" *ngFor="let moneda of arrayMonedas">{{moneda.nombre}}</option>
+          </select>
+        </div>
+
+        <!-- Segundo desplegable -->
+        <div class="mb-3">
+          <label class="form-label">Opción 2</label>
+          <select class="form-select" [(ngModel)]="to" name="to">
+            <option [ngValue]="moneda.codigo" *ngFor="let moneda of arrayMonedas">{{moneda.nombre}}</option>
+          </select>
+        </div>
+
+        <!-- Input numérico -->
+        <div class="mb-3">
+          <label class="form-label">Cantidad</label>
+          <input type="number" class="form-control" min="1" [(ngModel)]="amount" name="amount">
+        </div>
+
+        <!-- Botón -->
+        <div class="d-grid mb-4">
+          <button type="button" class="btn btn-primary" (click)="convertirValor()">Convertir</button>
+        </div>
+
+        <!-- Input solo lectura -->
+        <div class="mb-3">
+          <label class="form-label">Resultado</label>
+          <input type="text" class="form-control" value="{{conversion | currency}}" readonly>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</body>
