@@ -1,0 +1,56 @@
+<body class="bg-dark">
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+
+        <div class="card shadow">
+          <div class="card-body">
+
+            <h3 class="mb-4 text-center">Generador de Audio</h3>
+
+            <form>
+
+              <!-- Desplegable 1 -->
+              <div class="mb-3">
+                <label class="form-label">Voz</label>
+                <select class="form-select" [(ngModel)]="vozSeleccionada" name="vozSeleccionada">
+                  <option [ngValue]="voz"  *ngFor="let voz of voices">{{voz}}</option>
+                </select>
+              </div>
+
+              <!-- Desplegable 3 -->
+              <div class="mb-3">
+                <label class="form-label">Estilo</label>
+                <select class="form-select" [(ngModel)]="estiloSeleccionado" name="estiloSeleccionado">
+                  <option *ngFor="let estilo of estilosVoz">{{estilo}}</option>
+                </select>
+              </div>
+
+              <!-- Textbox -->
+              <div class="mb-3">
+                <label class="form-label">Texto</label>
+                <textarea class="form-control" rows="4" placeholder="Escriba el texto..." [(ngModel)]="texto" name="texto"></textarea>
+              </div>
+
+              <!-- Botón -->
+              <div class="d-grid mb-4">
+                <button type="button" class="btn btn-primary" (click)="producirAudio()">Generar Audio</button>
+              </div>
+
+            </form>
+
+            <!-- Reproductor de audio -->
+            <div>
+              <label class="form-label">Audio generado</label>
+              <audio controls class="w-100" [src]="urlTemp"> </audio>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
