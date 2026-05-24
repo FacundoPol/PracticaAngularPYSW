@@ -14,9 +14,9 @@ export class MovieService {
     let httpOptions = {
       headers: new HttpHeaders(
         {
-          // 'x-rapidapi-key': '06b8cb8654msh800f67a5024e927p17b4afjsn8826196f2282',
-          // 'x-rapidapi-host': 'imdb-top-100-movies.p.rapidapi.com',
-          // 'Content-Type' : 'application/json'
+          'x-rapidapi-key': '06b8cb8654msh800f67a5024e927p17b4afjsn8826196f2282',
+          'x-rapidapi-host': 'imdb-top-100-movies.p.rapidapi.com',
+          'Content-Type' : 'application/json'
         })
     }
 

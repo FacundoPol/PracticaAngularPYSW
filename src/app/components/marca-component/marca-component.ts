@@ -27,12 +27,11 @@ export class MarcaComponent {
       )
   }
 
-  marcaId:string=""
   listaModelos: Array<any> = []
 
 
-  obtenerModelos(){
-    this.marcaService.getModelos(this.marcaId).subscribe(
+  obtenerModelos(marcaId:string){
+    this.marcaService.getModelos(marcaId).subscribe(
       (result:any)=>{
         this.listaModelos= result
       },

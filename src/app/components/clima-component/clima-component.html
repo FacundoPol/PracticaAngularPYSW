@@ -1,0 +1,133 @@
+<div class="container mt-5">
+
+  <!-- FORMULARIO -->
+  <div class="card shadow p-4">
+
+    <h2 class="text-center mb-4">
+      Consulta del clima
+    </h2>
+
+    <!-- INPUT CIUDAD -->
+     <div class="mb-3">
+          <label class="form-label">Seleccione Ciudad:</label>
+          <select class="form-select" [(ngModel)]="ciudad" name="ciudad">
+            <option *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+          </select>
+        </div>
+    
+
+    <!-- BOTON -->
+    <div class="d-grid">
+
+      <button class="btn btn-primary" (click)="obtenerTemperatura()">
+        Consultar
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- CARD RESULTADOS -->
+  <div class="card shadow mt-4">
+
+    <div class="card-body">
+
+      <h3 class="text-center mb-4">
+        Resultado del clima
+      </h3>
+      
+
+      <div class="row text-center">
+        <!-- RADIO BUTTONS -->
+    <div class="mb-4">
+
+      <h4>Unidad de Temperatura</h4>
+
+      <div class="form-check form-check-inline">
+
+        <input
+          class="form-check-input"
+          type="radio"
+          name="temperatura"
+          [value]="true" [(ngModel)]="unidad">
+
+        <label class="form-check-label">
+          Celsius
+        </label>
+
+      </div>
+
+      <div class="form-check form-check-inline">
+
+        <input
+          class="form-check-input"
+          type="radio"
+          name="temperatura"
+          [value]="false" [(ngModel)]="unidad">
+
+        <label class="form-check-label">
+          Fahrenheit
+        </label>
+
+      </div>
+
+    </div>
+
+        <div class="col-md-4 mb-3">
+
+          <h5>Temperatura</h5>
+
+          <p *ngIf="unidad==false">{{resultado.temp | number:'1.0-0'}}°</p>
+          <p *ngIf="unidad==true">{{(resultado.temp -32) * 5/9 | number:'1.0-0'}}°</p>
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+          <h5>Sensación térmica</h5>
+
+            <p *ngIf="unidad==false">{{resultado.feels_like | number:'1.0-0'}}°</p>
+            <p *ngIf="unidad==true">{{(resultado.feels_like-32) * 5/9 | number:'1.0-0'}}°</p>
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+          <h5>Temperatura mínima</h5>
+
+          <p *ngIf="unidad==false">{{resultado.temp_min | number:'1.0-0'}}°</p>
+          <p *ngIf="unidad==true">{{(resultado.temp_min-32) * 5/9 | number:'1.0-0'}}°</p>
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+          <h5>Temperatura máxima</h5>
+
+          <p *ngIf="unidad==false">{{resultado.temp_max | number:'1.0-0'}}°</p>
+          <p *ngIf="unidad==true">{{(resultado.temp_max-32) * 5/9 | number:'1.0-0'}}°</p>
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+          <h5>Humedad</h5>
+
+          <p>{{resultado.humidity}}%</p>
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+          <h5>Presión</h5>
+
+          <p>{{resultado.pressure}} mb</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

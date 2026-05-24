@@ -1,0 +1,10 @@
+.card-hover{
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-hover:hover{
+  background-color: #0d6efd;
+  color: white;
+  transform: scale(1.03);
+}
