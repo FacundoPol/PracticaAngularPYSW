@@ -5,6 +5,7 @@ import { ConversorComponent } from './components/conversor-component/conversor-c
 import { ConversorAudioComponent } from './components/conversor-audio-component/conversor-audio-component';
 import { ClimaComponent } from './components/clima-component/clima-component';
 import { QrComponent } from './components/qr-component/qr-component';
+import { ParcialComponent } from './components/parcial-component/parcial-component';
 
 export const routes: Routes = [
     { path: 'movies', component: MovieComponent },
@@ -12,5 +13,6 @@ export const routes: Routes = [
     { path: 'conversor', component: ConversorComponent },
     { path: 'audio', component: ConversorAudioComponent },
     { path: 'clima', component:ClimaComponent },
-    { path: 'qr', component: QrComponent}
+    { path: 'qr', component: QrComponent},
+    { path: 'parcial', component: ParcialComponent}
 ];
