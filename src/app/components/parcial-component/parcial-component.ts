@@ -12,9 +12,27 @@ import { ParcialService } from '../../services/parcial-service';
 export class ParcialComponent {
 
     constructor(private parcialService : ParcialService){
+    }
+
+
+    comida : string = ""
+    recetas : Array<any> = []
+
+
+
+    buscarReceta(){
+      this.parcialService.getRecetaid(this.comida).subscribe(
+        (result:any) => {
+          this.recetas = result
+          // console.log(result)
+        },
+        (error:any) => {
+          console.log(error)
+        }
+      )
 
     }
-    
+
 
 
 }
