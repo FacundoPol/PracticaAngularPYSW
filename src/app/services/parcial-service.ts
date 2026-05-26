@@ -35,7 +35,12 @@ export class ParcialService {
       })
     }
 
-    return this.http.get("https://deep-translate1.p.rapidapi.com/language/translate/v2",httpOptions)
+    let body = {
+  "q": receta,
+  "source": "en",
+  "target": "es"
+    }
+    return this.http.get("https://deep-translate1.p.rapidapi.com/language/translate/v2",body,)
   }
 
 }
