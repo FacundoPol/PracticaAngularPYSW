@@ -1,0 +1,73 @@
+<div class="container mt-4">
+
+  <div class="row justify-content-center">
+    
+    <div class="col-md-6">
+
+      <div class="card p-4 shadow">
+
+        <h3 class="mb-3 text-center">Generar QR</h3>
+
+        <input 
+          type="text"
+          class="form-control mb-3"
+          placeholder="Ingrese texto o URL"
+          [(ngModel)] = "urlQr" name="urlQr"
+        >
+
+        <button 
+          class="btn btn-primary w-100"
+          data-bs-toggle="modal"
+          data-bs-target="#modalQR"
+          (click)="obtenerQr()"
+        >
+          Generar QR
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- MODAL -->
+
+<div 
+  class="modal fade"
+  id="modalQR"
+  tabindex="-1"
+  aria-hidden="true"
+>
+
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <h5 class="modal-title">Código QR</h5>
+
+        <button 
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+
+      </div>
+
+      <div class="modal-body text-center">
+
+        <img 
+          [src]="resultado"
+          class="img-fluid"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
