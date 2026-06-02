@@ -40,7 +40,7 @@ export class ParcialService {
   "source": "en",
   "target": "es"
     }
-    return this.http.get("https://deep-translate1.p.rapidapi.com/language/translate/v2",body,)
+    return this.http.post("https://deep-translate1.p.rapidapi.com/language/translate/v2",body,httpOptions)
   }
 
 }

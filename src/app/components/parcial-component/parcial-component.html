@@ -25,9 +25,41 @@
           <td>{{receta.name}}</td>
           <td>{{receta.description}}</td>
           <td><p *ngFor="let ingrediente of receta.ingredients">{{ingrediente.name}}</p></td>
-          <td><img [src]="receta.image" alt=""></td>
-          <td></td>
+          <td><img [src]="'data:image/png;'+receta.image" alt=""></td>
+          <td><button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#traductor"(click)="traducir(receta.description)">Traducir</button></td>
         </tr>
       </tbody>
     </table>
   </div>
+
+
+  <div class="modal fade" id="traductor" tabindex="-1">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Descripcion</h5>
+
+        <button 
+          type="button" 
+          class="btn-close" 
+          data-bs-dismiss="modal">
+        </button>
+      </div>
+
+      <div class="modal-body">
+                <p>{{resultado}}</p>
+      </div>
+
+      <div class="modal-footer">
+        <button 
+          type="button" 
+          class="btn btn-secondary"
+          data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

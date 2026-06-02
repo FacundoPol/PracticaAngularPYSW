@@ -18,7 +18,7 @@ export class ParcialComponent {
     comida : string = ""
     recetas : Array<any> = []
 
-
+    resultado : string = ""
 
     buscarReceta(){
       this.parcialService.getRecetaid(this.comida).subscribe(
@@ -31,6 +31,19 @@ export class ParcialComponent {
         }
       )
 
+    }
+
+    
+    traducir(receta:string){
+      this.parcialService.getTraduccion(receta).subscribe(
+        (result:any) => {
+          // console.log(result)
+          this.resultado = result.data.translations.translatedText[0]
+        },
+        (error:any) => {
+          console.log(error)
+        }
+      )
     }
 
 
