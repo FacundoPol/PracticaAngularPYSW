@@ -8,6 +8,7 @@ import { QrComponent } from './components/qr-component/qr-component';
 import { ParcialComponent } from './components/parcial-component/parcial-component';
 import { PruebaComponent } from './secundario/comp/prueba-component/prueba-component';
 import { Simulacro2Component } from './secundario/comp/simulacro2-component/simulacro2-component';
+import { RecuperatorioComponent } from './components/recuperatorio-component/recuperatorio-component';
 
 export const routes: Routes = [
     { path: 'movies', component: MovieComponent },
@@ -18,5 +19,6 @@ export const routes: Routes = [
     { path: 'qr', component: QrComponent},
     { path: 'parcial', component: ParcialComponent},
     { path: 'prueba', component: PruebaComponent},
-    { path: 'simulacro2', component: Simulacro2Component}
+    { path: 'simulacro2', component: Simulacro2Component},
+    { path: 'recu', component: RecuperatorioComponent}
 ];
